@@ -1,0 +1,29 @@
+{
+  "name": "pagination-exercise",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "type": "commonjs",
+  "scripts": {
+    "compile": "tsc --project tsconfig.json && node build.js",
+    "start": "npm run compile && node ./dist/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@apollo/server": "^4.8.1",
+    "@graphql-tools/load-files": "^7.0.0",
+    "@graphql-tools/merge": "^9.0.0",
+    "@graphql-tools/schema": "^10.0.0",
+    "@playlyfe/gql": "^2.6.2",
+    "apollo-server": "^3.12.0",
+    "graphql": "^16.7.1",
+    "prettier": "^3.0.0",
+    "ramda": "^0.29.0",
+    "typescript": "^5.1.6"
+  },
+  "keywords": [],
+  "description": "",
+  "devDependencies": {
+    "@types/ramda": "^0.29.3"
+  }
+}

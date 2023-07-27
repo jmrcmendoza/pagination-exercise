@@ -1,0 +1,17 @@
+input CreateAuthorInput {
+  _id: String
+  name: String
+}
+
+type Author {
+  _id: String
+  name: String
+  books(first: Int, after: Binary): BooksConnection!
+}
+
+type Query {
+  author(_id: String): Author
+}
+type Mutation {
+  createAuthor(input: CreateAuthorInput!): ID!
+}

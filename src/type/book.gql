@@ -1,0 +1,47 @@
+input StringQueryOperatorInput {
+  eq: String
+  ne: String
+  in: [String!]
+  nin: [String!]
+}
+
+input CreateBookInput {
+  title: String
+  author: String
+}
+
+type Book {
+  _id: String
+  title: String
+  author: String
+  cursor: Binary
+}
+
+type PageInfo {
+  endCursor: Binary
+  hasNextPage: Boolean!
+}
+
+type BooksConnectionEdge {
+  cursor: Binary!
+  node: Book!
+}
+
+type BooksConnection {
+  totalCount: Int!
+  edges: [BooksConnectionEdge]!
+  pageInfo: PageInfo!
+}
+
+input BooksFilterInput {
+  id: StringQueryOperatorInput
+  title: StringQueryOperatorInput
+  author: StringQueryOperatorInput
+}
+
+type Query {
+  books(first: Int, after: Binary, filter: BooksFilterInput): BooksConnection
+}
+type Mutation {
+  createBook(input: CreateBookInput!): ID!
+}
